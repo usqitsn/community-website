@@ -1,0 +1,211 @@
+/*Original author: Ashley Rowe - Vice President - USQITSN
+    Contributions:
+    Contact: enquiries@usqitsn.org
+*/
+body, html{
+    margin: 0 0 0 0;
+    height: 100%;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.padded-content{
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3em;
+}
+section pre {
+    height: auto;
+    max-height: 25em;;
+    overflow: auto;
+    background-color: #FFFFFF;
+    word-break: normal !important;
+    word-wrap: normal !important;
+    white-space: pre !important;
+    border: 1px solid #FFF;
+}​
+a.btn{
+    margin: 0px;
+    min-width: 5em;
+}
+a.btn:link, a.btn:visited {
+    background-color: white;
+    color:black;
+    font-family: sans-serif;
+    padding: 0.6em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+a.big-btn:link,a.big-btn:visited{
+    background-color: black;
+    color:white;
+    font-family: sans-serif;
+    padding: 0.6em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border-radius: 1em;
+}
+a.big-btn:hover{
+    transform: translateY(-2px);
+}
+nav{
+    float: right;
+}
+a.btn:hover{
+  transform: translateY(-2px);
+}
+a.lnk{
+    float: right;
+    color: white;
+    font-size: 1.2em;
+}
+section.header{
+  background-color: #32353a;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: auto;
+  text-align: center;
+  padding:1em;
+  flex:none;
+}
+img.logo{
+  position: relative;
+}
+div.header-text{
+
+}
+h1, h2{
+  color: white;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+h1{
+  font-size: 2.7em;
+}
+footer{
+  padding: 1em;
+  background-color: #32353a;
+  text-align: center;
+  flex-shrink: 0;
+}
+footer a{
+  color: white;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+footer a:hover{
+  color: #AAAAAA;
+}
+ul.no-bullet{
+  padding: 0;
+  list-style-type: none;
+}
+section.main-content{
+  flex: 1 0 auto;
+
+}
+h3.page-title{
+  font-size: 1.5em;
+  font-family: 'Quicksand', sans-serif;
+}
+.center{
+  text-align: center;
+}
+div.larger{
+  font-size: 1.4em;
+}
+.larger{
+  font-size: 1.4em;
+}
+.post-info h5{
+  color: #000000AA;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+div.hz-centred{
+    width: 100%;
+    max-width: inherit;
+}
+div.hz-centred{
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+h4{
+  font-weight: bold;
+}
+.info-tile{
+    float: left;
+    text-align: center;
+    border-style: solid;
+    border-width: thick;
+    max-width: 40rem;
+    height: auto;
+    margin: 3em;
+    padding: 1em;
+}
+/*form styling*/
+.grey-back{
+  background-color: #32353a;
+  color: #ffffff;
+}
+.form-wrapper{
+  width: 350px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*User comments on posts*/
+.comment-wrapper .panel-body {
+    max-height:650px;
+    overflow:auto;
+}
+
+.comment-wrapper .media-list .media img {
+    width:64px;
+    height:64px;
+    border:2px solid #e5e7e8;
+}
+
+.comment-wrapper .media-list .media {
+    border-bottom:1px dashed #efefef;
+    margin-bottom:25px;
+}
+
+
+@media screen and (max-width: 500px) {
+    h1,h2{
+        font-size: 1.8em;
+    }
+    div.larger{
+      font-size: 1.2em;;
+    }
+
+    nav{
+        float: none;
+    }
+    footer a{
+        font-size: 0.9em;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+    }
+    section.header{
+      padding:0.5em;
+    }
+    section.main-content{
+      max-width: 90%;
+    }
+    img.logo{
+        height: 25%;
+        width: 25%;
+    }
+}
