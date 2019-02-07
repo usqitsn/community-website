@@ -2,7 +2,7 @@
 /* Database credentials.*/
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'webuser');
-define('DB_PASSWORD', 'password');
+define('DB_PASSWORD', 'sdsf43hnb355w');
 define('DB_NAME', 'members');
 
 /* Attempt to connect to MySQL database */

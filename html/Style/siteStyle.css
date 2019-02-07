@@ -110,12 +110,13 @@ ul.no-bullet{
   list-style-type: none;
 }
 section.main-content{
-  flex: 1 0 auto;
-
+  float: left;
+  width:100%;
 }
-h3.page-title{
+.page-title{
   font-size: 1.5em;
   font-family: 'Quicksand', sans-serif;
+  color: black;
 }
 .center{
   text-align: center;
@@ -180,6 +181,25 @@ h4{
     border-bottom:1px dashed #efefef;
     margin-bottom:25px;
 }
+div.sidebar{
+  width:15%;;
+  height:100%;
+  background-color: #32353a;
+  overflow: auto;
+  float: left;
+  padding: 1em;
+}
+.sidebar h4{
+  color: white;
+}
+.sidebar ul{
+  list-style: none;
+    padding-left: 0;
+    font-size: 1.2em;
+}
+div.content{
+  flex: 1 0 auto;
+}
 
 
 @media screen and (max-width: 500px) {
@@ -203,6 +223,7 @@ h4{
     }
     section.main-content{
       max-width: 90%;
+
     }
     img.logo{
         height: 25%;

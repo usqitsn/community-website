@@ -2,36 +2,33 @@
     Contributions:
     Contact: enquiries@usqitsn.org
 -->
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Quicksand" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./Style/siteStyle.css">
-	<title>USQ IT Students' Network</title>
-  </head>
-  <body>
-    <section class="header">
-      <a href="index.html"><img class="logo" src="Resources/Images/logo2.png" alt="USQITSN Logo" width="180" height="194"/></a>
-      <div class="header-text">
-        <h1 class="project-name">USQ IT Students' Network</h1>
+<?php
+  session_start();
+  if(isset($_SESSION['login_user'])){
+    include "/var/www/components/htmlheadsignedin.html";
+    $memberUname = ucfirst($_SESSION['login_user']);
+    echo <<<EOT
+    <div class="content">
+      <div class="sidebar">
+        <nav>
+          <h4>Recent Posts</h4>
+          <ul class='vert-links'>
+EOT;
+            require_once "/var/www/scripts/dbConfig.php";
+            require_once "/var/www/scripts/Objects/post.php";
+            require_once "/var/www/scripts/Objects/member_posts.php";
+            $member_posts = new Member_Posts($mysqli);
+            $posts = $member_posts->queryPosts($mysqli);
+            foreach ($posts as $post) {
+              print "<a href='".$post->getPostLocation()."' >".$post->getPostName()."</a>";
+            }
+    echo <<<EOT
+          </ul>
+        </nav>
       </div>
-
-      <nav>
-          <a href="/logout.php" class="btn">Log Out</a>
-      </nav>
-
-    </section>
     <section class='main-content padded-content center larger'>
-      <img class="infoImage" src="Resources/Images/underConstruction.png" alt="Under Construction Image" width="200" height="71"/>
-    <?php
-    session_start();
-    if(isset($_SESSION['login_user'])){
-      $memberUname = ucfirst($_SESSION['login_user']);
-      print "<h3>Hi {$memberUname}, welcome to our member's area!</h3>";
-      print "<p>This page is still under construction, but good things come to those who wait. Check back in again soon!</p>";
-      echo <<<EOT
+      <h3>Hi {$memberUname}, welcome to our member's area!</h3>
+      <p>Here you will find exclusive content for our members. We hope to update this page regularly with new content, so please check back frequently.</p>
 
       <p>Please read our <a href="/member-contributions/know-and-tell/creating-a-user-registration-form.php">first member's post</a> to "Know and Tell", which details how the member registration form was created using PHP, HTML and CSS.</p>
 
@@ -64,12 +61,14 @@
       </div>
 EOT;
     }else{
+      include "/var/www/components/htmlhead.html";
       print "<p>This page is for members only. Please <a href='login.php'>login here</a>.</p>";
       print "<p>If you are not already a member, why not <a href='registration.php'>register</a> to become a member. It is absolutely free!</p>";
     }
     ?>
 
     </section>
+  </div>
     <footer class="site-footer">
         <span class="site-footer-credits"><a href="http://twitter.com/usqitsn">Twitter</a> | <a href="https://www.instagram.com/usqitsn/">Instagram</a> | <a href="http://usq.edu.au">USQ</a> | <a href="https://www.usq.edu.au/current-students/life/student-clubs/find-a-club/it-student-network">USQ-affiliated club page</a> | <a href="logout.php">Log out</a></span>
 	  </footer>
